@@ -18,13 +18,16 @@ public class WelcomeController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
     @GetMapping("/data")
     public String dataController() {
         List<ServiceInstance> instances = discoveryClient.getInstances("client-one".toUpperCase());
         if (instances != null && instances.size() > 0) {
             URI uri = instances.get(0).getUri();
             if (uri != null) {
-                return (new RestTemplate()).getForObject(uri, String.class);
+                return restTemplate.getForObject(uri, String.class);
             }
         }
         return null;
