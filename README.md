@@ -9,6 +9,6 @@
 Access for Eureka server monitoring:
 <url> http://localhost:8888/ </url>
 
-ms-cloud-config-server is for future extension for putting properties files in cloud
+ms-cloud-config-server for putting properties in cloud
 
 Access For Data: <url> http://localhost:8021/v1/data </url>
