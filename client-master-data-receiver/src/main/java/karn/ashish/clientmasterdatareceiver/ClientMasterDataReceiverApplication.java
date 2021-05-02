@@ -18,7 +18,7 @@ public class ClientMasterDataReceiverApplication {
 	//  This "LoadBalanced" RestTemplate
 	//  is automatically hooked into Ribbon:
 	@Bean
-//	@LoadBalanced
+	@LoadBalanced
 	public RestTemplate getRestTemplate(){
 		return new RestTemplate();
 	}
